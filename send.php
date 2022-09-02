@@ -8,7 +8,7 @@
     $surname = $_POST["surname"];
     $age = $_POST["age"];
     $email = $_POST["email"];
-    $yes = $_POST["yes"];
+    $yes = $_POST["yes"] ?? 0 ;
     $query = "INSERT into users (first_name, last_name, age, yes, Email) VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('sssds', $name, $surname, $age, $yes, $email );
